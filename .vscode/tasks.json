@@ -35,6 +35,7 @@
                 "-fdiagnostics-color=always",
                 "-std=c++17",
                 "-I${workspaceFolder}",
+                "-O2",
                 "${workspaceFolder}/main.cpp",
                 "-o",
                 "${workspaceFolder}/bin/main",
