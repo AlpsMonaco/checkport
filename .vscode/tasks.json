@@ -1,0 +1,57 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "windows build",
+            "command": "cl.exe",
+            "args": [
+                "/Zi",
+                "/EHsc",
+                "/nologo",
+                "/Ox",
+                "/MD",
+                "/D_WIN32_WINNT=0x0601",
+                "/std:c++17",
+                "/Fe${workspaceFolder}\\bin\\main.exe",
+                "${workspaceFolder}\\main.cpp"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}\\bin"
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "调试器生成的任务。"
+        },
+        {
+            "type": "cppbuild",
+            "label": "linux build",
+            "command": "/usr/bin/g++-10",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-std=c++17",
+                "-I${workspaceFolder}",
+                "${workspaceFolder}/main.cpp",
+                "-o",
+                "${workspaceFolder}/bin/main",
+                "-lpthread",
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "编译器: /usr/bin/g++-10"
+        },
+    ],
+    "version": "2.0.0"
+}
