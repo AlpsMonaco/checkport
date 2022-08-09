@@ -5,16 +5,16 @@
 
 int main(int argc, char** argv)
 {
-    // constructor requires ip and port range.
+    // Constructor requires ip and port range.
     checkport::CheckPort cp("127.0.0.1", 1, 4000);
 
-    // set connect timeout.Consider fail if connecting port timeout.
+    // Set connect timeout.Consider fail if connecting port timeout.
     cp.SetConnectTimeout(1);
 
-    // set max concurrency.Increase this will improve check speed.
+    // Set max concurrency.Increase this will improve check speed.
     cp.SetConcurrency(100);
 
-    // return 0 if no port is accessable in the port range
+    // Return 0 if no port is accessable in the port range
     // Or any number larger than 0 indicates the first accessable port in the range.
     auto port = cp.GetOne();
 
@@ -23,7 +23,7 @@ int main(int argc, char** argv)
     else
         std::cout << port << " is accessable" << std::endl;
 
-    // return vector holds every accessable port in the range.
+    // Return vector holds every accessable port in the range.
     auto port_list = cp.GetAll();
     for (const auto& v : port_list)
         std::cout << v << " ";
